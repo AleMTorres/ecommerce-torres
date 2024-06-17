@@ -1,32 +1,8 @@
-import ItemList from "./ItemList"
-import { products } from "../../products"
-import { useState, useEffect } from "react"
-const ItemListContainer = () => {
-    const [items, setItems] = useState([])
-    const [error, setError] = useState({})
-
-    useEffect(() => {
-        const getProducts = new Promise((resolve, reject) => {
-            if (products) {
-                resolve(products)
-            } else {
-                reject({ message: "error al obtener productos", codigo: "404" })
-            }
-        })
-
-        getProducts
-            .then(res => {
-                setItems(res)
-            })
-            .catch(error => {
-                setError(error)
-            })
-    }, [])
-
+const ItemListContainer = ({greetings}) => {
 
     return (
         <>
-            <ItemList products={items} />
+            <h1 style={{color:"red", fontSize:"50px",   textAlign:"center", marginTop:"100px"}}>{greetings}</h1>
         </>
     )
 }

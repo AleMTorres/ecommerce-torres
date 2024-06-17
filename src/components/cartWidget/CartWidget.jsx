@@ -1,9 +1,15 @@
-import { TiShoppingCart } from "react-icons/ti";
+import { TiShoppingCart } from 'react-icons/ti';
+import './cartWidget.css';
 
 const CartWidget = () => {
-    return (
-        <TiShoppingCart color="" size={30} />
-    )
-}
+    const cartItemCount = 5; // Número fijo de artículos en el carrito
 
-export default CartWidget
+    return (
+        <div className="cart-widget">
+            <TiShoppingCart className="cart-icon" size={30} />
+            <span className="cart-count">{cartItemCount}</span>
+        </div>
+    );
+};
+
+export default CartWidget;
