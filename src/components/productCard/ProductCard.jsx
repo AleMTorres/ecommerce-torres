@@ -1,11 +1,38 @@
-export const ProductCard = ({ title, description, price, stock, category, image }) => {
+import { Link } from "react-router-dom"
+import { Card } from 'antd';
+const { Meta } = Card;
+
+export const ProductCard = ({ title, description, price, stock, category, image, id }) => {
 
     return (
-        <div style={{ display: "flex", gap: "10px", border: "1px solid black", padding: "10px", flexDirection: "column", alignItems: "center", marginTop: "10px" }}>
-            <h3>{title}</h3>
-            <img src={image} alt="" width={200} height={250}/>
-            <h5>Descripción: {description}</h5>
-            <p>Precio: ${price}</p>
-        </div>
+
+        <>
+            <Card
+                hoverable
+                style={{
+                    width: 300,
+                    marginTop: 16
+                }}
+                cover={
+                    <img
+                        alt="example"
+                        src={image}
+                    />
+                }
+            >
+
+                <Meta
+                    title={title}
+                    description={description}
+                />
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <p>Precio: ${price}</p>
+                    <p>Stock: {stock}</p>
+                </div>
+                <Link to={`/detalle/${id}`} style={{ textDecoration: "none" }}>
+                    <h4>Ver más</h4>
+                </Link>
+            </Card>
+        </>
     )
 }

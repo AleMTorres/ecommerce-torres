@@ -1,8 +1,16 @@
 import { TiShoppingCart } from "react-icons/ti";
+import { Link } from "react-router-dom";
+import { Badge, Avatar } from "antd";
 
 const CartWidget = () => {
     return (
-        <TiShoppingCart color="" size={30} />
+        <div style={{ marginRight: "50px" }}>
+            <Link to="/cart">
+                <Badge count={0} showZero>
+                    <TiShoppingCart color="" size={30}/>
+                </Badge>
+            </Link>
+        </div >
     )
 }
 
