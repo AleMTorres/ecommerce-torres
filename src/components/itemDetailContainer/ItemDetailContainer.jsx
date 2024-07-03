@@ -3,7 +3,7 @@ import ItemDetail from "./ItemDetail"
 import { useParams } from "react-router-dom"
 import { products } from "../../products"
 
-function ItemDetailContainer() {
+function ItemDetailContainer({ onAdd }) {
   const { id } = useParams()
   const [item, setItem] = useState({})
 
@@ -14,7 +14,7 @@ function ItemDetailContainer() {
     }
   }, [id])
 
-  return <ItemDetail item={item} /> 
+  return <ItemDetail item={item} onAdd={onAdd}/> 
 }
 
 export default ItemDetailContainer

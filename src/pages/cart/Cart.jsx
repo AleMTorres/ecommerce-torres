@@ -1,7 +1,12 @@
-
+import { Button } from "antd"
+import { Link } from "react-router-dom"
 const Cart = () => {
   return (
-    <div>Carrito</div>
+    <div>
+      <Link to="/checkout">
+        <Button type="primary">Checkout</Button>
+      </Link>
+    </div>
   )
 }
 

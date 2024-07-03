@@ -1,6 +1,17 @@
 import { Image } from "antd"
+import { Counter } from "../counter/Counter"
 
 function ItemDetail({ item }) {
+
+  const onAdd = (quantity) => {
+    let objetoFinal = {
+      ...item,
+      quantity : quantity,
+      finalPrice: item.price * quantity
+    }
+    console.log(objetoFinal)
+
+  }
 
   return (
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", marginTop: "20px" }}>
@@ -22,7 +33,7 @@ function ItemDetail({ item }) {
           Stock: {item.stock}
         </p>
       </div>
-
+      <Counter onAdd={onAdd}/>
     </div>
   )
 }

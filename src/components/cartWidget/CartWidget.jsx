@@ -1,6 +1,6 @@
 import { TiShoppingCart } from "react-icons/ti";
 import { Link } from "react-router-dom";
-import { Badge, Avatar } from "antd";
+import { Badge, Avatar, Button } from "antd";
 
 const CartWidget = () => {
     return (
