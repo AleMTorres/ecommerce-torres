@@ -1,7 +1,7 @@
 import { Image } from "antd"
 import { Counter } from "../counter/Counter"
 
-function ItemDetail({ item, onAdd }) {
+function ItemDetail({ item, onAdd, initial }) {
 
   return (
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", marginTop: "20px" }}>
@@ -23,7 +23,7 @@ function ItemDetail({ item, onAdd }) {
           Stock: {item.stock}
         </p>
       </div>
-      <Counter onAdd={onAdd}/>
+      <Counter onAdd={onAdd} stock={item.stock} initial={initial}/>
     </div>
   )
 }

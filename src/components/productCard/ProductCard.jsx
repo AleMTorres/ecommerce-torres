@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { Card } from 'antd';
 const { Meta } = Card;
 
-export const ProductCard = ({ title, description, price, stock, category, image, id }) => {
+export const ProductCard = ({ title, description, price, stock, category, image, id, quantity }) => {
 
     return (
 
@@ -29,6 +29,11 @@ export const ProductCard = ({ title, description, price, stock, category, image,
                     <p>Precio: ${price}</p>
                     <p>Stock: {stock}</p>
                 </div>
+
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", color: "green", fontWeight: "bold" }}>
+                    <p>En carrito: {quantity}</p>
+                </div>
+
                 <Link to={`/detalle/${id}`} style={{ textDecoration: "none" }}>
                     <h4>Ver más</h4>
                 </Link>

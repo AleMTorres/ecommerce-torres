@@ -6,12 +6,13 @@ import { CartContext } from "../../context/CartContext";
 
 const CartWidget = () => {
 
-    const { cart } = useContext(CartContext)
+    const { cart, getTotalItems } = useContext(CartContext)
+    let totalItems = getTotalItems()
 
     return (
         <div style={{ marginRight: "50px" }}>
             <Link to="/cart">
-                <Badge count={cart.length} showZero>
+                <Badge count={totalItems} showZero>
                     <TiShoppingCart color="" size={30} />
                 </Badge>
             </Link>

@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { Button } from "antd";
 
-export const Counter = ({ onAdd }) => {
+export const Counter = ({ onAdd, stock, initial = 1 }) => {
 
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(initial);
 
     const increment = () => {
-        setCount(count + 1);
+        if (count < stock) {
+            setCount(count + 1);
+        } else {
+            alert("Stock insuficiente");
+        }
     }
 
     const decrement = () => {
