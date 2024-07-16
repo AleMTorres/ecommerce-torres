@@ -3,6 +3,8 @@ import { products } from "../../products"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { Spin, Alert } from 'antd';
+import { db } from "../../firebaseConfig"
+import { collection, getDocs, query, where } from "firebase/firestore"
 
 const ItemListContainer = () => {
     const [items, setItems] = useState([])
@@ -10,25 +12,19 @@ const ItemListContainer = () => {
     const { category } = useParams()
 
     useEffect(() => {
-        const getProducts = new Promise((resolve, reject) => {
-            if (products) {
-                setTimeout(() => {
-                    resolve(category ? products.filter(product => product.category === category) : products)
-                }, 1000)
+        let productsCollection = collection(db, "products")
+        let consulta = productsCollection
 
-            } else {
-                reject({ message: "error al obtener productos", codigo: "404" })
-            }
+        if(category){
+            consulta = query(productsCollection, where("category", "==", category))
+        }
+        
+        getDocs(consulta).then(res => {
+            let products = res.docs.map(product => ({ ...product.data(), id: product.id }))
+            setItems(products)
         })
-
-        getProducts
-            .then(res => {
-                setItems(res)
-            })
-            .catch(error => {
-                setError(error)
-            })
     }, [category])
+
 
     return (
         <>
