@@ -43,6 +43,13 @@ const ItemListContainer = () => {
         }, 100);
     };
 
+    // const addProducts = () => {
+    //     let productsCollection = collection(db, "products")
+    //     products.forEach(product => {
+    //         addDoc(productsCollection, product)
+    //     })
+    // }
+
 
     return (
         <>

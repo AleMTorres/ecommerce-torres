@@ -17,11 +17,18 @@ const NavBar = () => {
                 </div>
 
                 <Link to="/">
-                    <img src="https://res.cloudinary.com/dzfby9wvn/image/upload/v1721690266/Logo_florencia_qngf4j.png" alt=""
+                    {/* <img src="https://res.cloudinary.com/dzfby9wvn/image/upload/v1721690266/Logo_florencia_qngf4j.png" alt=""
                         style={{
                             width: "150px",
                             height: "150px",
-                        }} />
+                        }}
+                    /> */}
+                    <img src="https://res.cloudinary.com/dzfby9wvn/image/upload/v1721694307/cropped-deco-home-logo-icon_rs8olo.png" alt=""
+                        style={{
+                            width: "350px",
+                            height: "150px",
+                        }}
+                    />
                 </Link>
 
                 <CartWidget />
