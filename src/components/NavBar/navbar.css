@@ -1,8 +1,21 @@
 .navbarContainer {
-    background-color: rgb(177, 179, 105);
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     width: 100%;
     justify-content: space-between;
     min-height: 10vh;
     align-items: center;
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+    color: #007bff;
 }

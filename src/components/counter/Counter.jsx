@@ -22,10 +22,10 @@ export const Counter = ({ onAdd, stock, initial = 1 }) => {
 
     return (
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "row", marginTop: "20px", gap: "10px" }}>
-            <Button onClick={increment} type="primary">+</Button>
+            <Button onClick={increment} style={{backgroundColor: "black", color: "white"}}>+</Button>
             <p>{count}</p>
-            <Button onClick={decrement} type="primary">-</Button>
-            <Button onClick={() => onAdd(count)} type="primary" ghost>Agregar al carrito</Button>
+            <Button onClick={decrement} style={{backgroundColor: "black", color: "white"}}>-</Button>
+            <Button onClick={() => onAdd(count)} style={{backgroundColor: "black", color: "white"}} ghost>Agregar al carrito</Button>
         </div>
     )
 }

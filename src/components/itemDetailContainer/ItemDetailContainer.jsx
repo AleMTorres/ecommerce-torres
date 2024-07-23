@@ -1,7 +1,6 @@
 import { useEffect, useState, useContext } from "react"
 import ItemDetail from "./ItemDetail"
 import { useParams } from "react-router-dom"
-import { products } from "../../products"
 import { CartContext } from "../../context/CartContext"
 import Swal from "sweetalert2"
 import { db } from "../../firebaseConfig"

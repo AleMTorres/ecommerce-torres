@@ -1,6 +1,5 @@
 export let products = [
     {
-        id:1,
         title: 'Lámapara hongo',
         price: 100,
         description: 'Lámpara hongo con cable de 1.5mts',
@@ -9,7 +8,6 @@ export let products = [
         category: 'lamparas',
     },
     {
-        id:2,
         title: 'Lámpara gordita',
         price: 100,
         description: 'Lámpara gordita con cable de 1.5mts',
@@ -18,7 +16,6 @@ export let products = [
         category: 'lamparas',
     },
     {
-        id:3,
         title: 'Jarrón botella',
         price: 50,
         description: 'Jarrón para decoración',
@@ -27,7 +24,6 @@ export let products = [
         category: 'jarrones',
     },
     {
-        id:4,
         title: 'Set Florencia',
         price: 55,
         description: 'Jarrón, difusor y bandeja. Colores a elección.',

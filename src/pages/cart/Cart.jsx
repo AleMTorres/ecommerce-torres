@@ -47,21 +47,32 @@ const Cart = () => {
                   id={product.id}
                   quantity={product.quantity}
                 />
-                {/* <Button type="primary" onClick={deleteProduct(product.id)}>Eliminar</Button> */}
               </div>
             )
           })
         }
 
       </div>
-      <h2>TOTAL: ${total}</h2>
 
       {
-        cart.length > 0 && <Button type="primary" onClick={() => handleClearCart()}>Limpiar carrito</Button>
+        cart.length === 0 &&
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", marginTop: "20px" }}>
+          <Link to="/"><Button type="primary" style={{margin: "20px", backgroundColor: "black" }}>Empezar a comprar</Button></Link>
+        </div>
       }
-      <Link to="/checkout">
-        <Button type="primary" style={{ marginTop: "20px", marginLeft: "20px" }}>Checkout</Button>
-      </Link>
+
+      {
+        cart.length > 0 &&
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", marginTop: "20px" }}>
+          <Button type="primary" danger onClick={() => handleClearCart()}>Limpiar carrito</Button>
+          <Link to="/checkout">
+            <Button type="primary" style={{margin: "20px", backgroundColor: "green" }}>Finalizar compra</Button>
+          </Link>
+          <h2>TOTAL: ${total}</h2>
+
+        </div>
+      }
+
     </div>
   )
 }
