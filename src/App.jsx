@@ -6,6 +6,9 @@ import Cart from './pages/cart/Cart'
 import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer'
 import Checkout from './components/checkout/Checkout'
 import CartContextProvider from './context/CartContext'
+import Dashboard from './pages/dashboard/Dashboard'
+import PrivateRoutes from './components/routes/PrivateRoutes'
+import { routes } from './components/routes/routes'
 
 
 function App() {
@@ -15,12 +18,17 @@ function App() {
       <CartContextProvider>
         <Routes>
           <Route element={<NavBar />}>
-            <Route path="/" element={<ItemListContainer />} />
-            <Route path="/category/:category" element={<ItemListContainer />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/detalle/:id" element={<ItemDetailContainer />} />
-            <Route path="/checkout" element={<Checkout />} />
+            {
+              routes.map(({ id, path, Element }) => (
+                <Route key={id} path={path} element={<Element />} />
+              ))
+            }
           </Route>
+
+          <Route element={<PrivateRoutes />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Route>
+
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
       </CartContextProvider>

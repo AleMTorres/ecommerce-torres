@@ -1,8 +1,10 @@
 import CartWidget from "../cartWidget/CartWidget"
 import "./navbar.css"
 import { Outlet, Link } from "react-router-dom"
+import { Button } from "antd"
 
 const NavBar = () => {
+    let rol = "user"
 
     return (
         <>
@@ -15,6 +17,8 @@ const NavBar = () => {
                         <Link className="navbar-link" to="/" >Todo</Link>
                     </ul>
                 </div>
+
+                {rol === "admin" ? <Link to="/dashboard"><Button type="primary">Dashboard</Button> </Link> : null}
 
                 <Link to="/">
                     {/* <img src="https://res.cloudinary.com/dzfby9wvn/image/upload/v1721690266/Logo_florencia_qngf4j.png" alt=""
