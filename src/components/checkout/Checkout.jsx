@@ -11,7 +11,7 @@ const Checkout = () => {
 
     const [form] = Form.useForm()
     const [data, setData] = useState({ nombre: "", phone: "", email: "" })
-    const { cart, getTotalPrice } = useContext(CartContext)
+    const { cart, getTotalPrice, clearCart } = useContext(CartContext)
     const [orderId, setOrderId] = useState("")
     const [spinning, setSpinning] = useState(false);
     const [percent, setPercent] = useState(0);
@@ -64,6 +64,7 @@ const Checkout = () => {
             })
 
             setTimeout(() => {
+                clearCart()
                 navigate("/")
             }, 2000)
         })
